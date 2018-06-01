@@ -38,7 +38,7 @@ export class LoginPage {
   }
 
   goTabsHome(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
 }
