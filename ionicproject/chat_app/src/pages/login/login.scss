@@ -1,0 +1,37 @@
+page-login {
+    ion-title {
+        margin-bottom: 20vh;
+        font-family: 'Raleway-Black', sans-serif;
+        font-size: 30px;
+    }
+
+    ion-content{
+        background: #0250c5 !important;
+   
+    }
+
+    ion-input{
+        background: #e6e6e6;
+        border-radius: 5px;
+    }
+
+    div.container{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.wrap-login{
+        width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    div.wrap-login img{
+        width: 100px;
+        height: 100px;
+    }
+
+}

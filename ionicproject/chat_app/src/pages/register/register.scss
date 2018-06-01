@@ -1,0 +1,37 @@
+page-register {
+
+
+    ion-content{
+        background: #0250c5 !important;
+   
+    }
+
+    ion-input{
+        background: #e6e6e6;
+        border-radius: 5px;
+    }
+
+    div.container{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.wrap-register{
+        width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    div.wrap-register img{
+        width: 100px;
+        height: 100px;
+    }
+    //angulafire2 to connect firebase to ionic 
+    //one for authtentication, one for data 
+    //read data can import the data service, any authentication can be done by that 
+    //get data as objects better
+}

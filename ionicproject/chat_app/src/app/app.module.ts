@@ -4,31 +4,40 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { ProfilePage } from '../pages/profile/profile';
-import { ContactPage } from '../pages/contact/contact';
+import { ContactsPage } from '../pages/contacts/contacts';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+//import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     ProfilePage,
-    ContactPage,
+    ContactsPage,
     HomePage,
+    LoginPage,
+    RegisterPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
+    IonicModule.forRoot(MyApp, {
+      tabsPlacement: 'top',//new
+    }
+    )],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     ProfilePage,
-    ContactPage,
+    ContactsPage,
     HomePage,
+    LoginPage,
+    RegisterPage,
     TabsPage
   ],
   providers: [
