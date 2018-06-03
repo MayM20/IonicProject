@@ -27973,82 +27973,253 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-login ion-title {
-  margin-bottom: 20vh;
-  font-family: 'Raleway-Black', sans-serif;
-  font-size: 30px;
+.title.title-md {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 100%;
+  width: 70%;
+  text-align: center;
 }
 
-page-login ion-content {
+page-login {
+  /*ion-title {
+        margin-bottom: 20vh;
+        font-family: 'Raleway-Black', sans-serif;
+        font-size: 30px;
+    }
+
+    ion-content{
+        background: #0250c5 !important;
+   
+    }
+
+    ion-input{
+        background: #e6e6e6;
+        border-radius: 5px;
+    }
+
+    div.container{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.wrap-login{
+        width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    div.wrap-login img{
+        width: 100px;
+        height: 100px;
+    }*/
+}
+
+page-login .background {
   background: #0250c5 !important;
 }
 
-page-login ion-input {
-  background: #e6e6e6;
-  border-radius: 5px;
-}
-
-page-login div.container {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+page-login .scroll-content {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-page-login div.wrap-login {
-  width: 500px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-
-page-login div.wrap-login img {
-  width: 100px;
-  height: 100px;
-}
-
-page-register ion-content {
-  background: #0250c5 !important;
-}
-
-page-register ion-input {
-  background: #e6e6e6;
-  border-radius: 5px;
-}
-
-page-register div.container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  text-align: center;
+}
+
+page-login ion-card.card {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+page-login a, page-login p,
+page-login ion-card-header.card-header {
+  color: #fff !important;
+}
+
+page-login .list > .item-block:first-child {
+  border: medium none;
+}
+
+page-login .item {
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border: medium none;
+}
+
+page-login .item .text-input {
+  color: #fff;
+}
+
+page-login .item input::-moz-placeholder {
+  color: #fff !important;
+}
+
+page-login .item input:-moz-placeholder {
+  color: #fff !important;
+}
+
+page-login .item *:-moz-placeholder {
+  color: #fff !important;
+}
+
+page-login .item *:-ms-input-placeholder {
+  color: #fff !important;
+}
+
+page-login .item *::-webkit-input-placeholder {
+  color: #fff !important;
+}
+
+page-login .icon {
+  padding-right: 10px;
+}
+
+page-login .bottom {
+  bottom: 0;
+}
+
+page-login .input-cover {
+  position: static;
+}
+
+page-register {
+  /*OLD code
+
+    ion-content{
+        background: #0250c5 !important;
+   
+    }
+
+    ion-input{
+        background: #e6e6e6;
+        border-radius: 5px;
+    }
+
+    div.container{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.wrap-register{
+        width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    div.wrap-register img{
+        width: 100px;
+        height: 100px;
+    }
+    //angulafire2 to connect firebase to ionic 
+    //one for authtentication, one for data 
+    //read data can import the data service, any authentication can be done by that 
+    //get data as objects better
+    */
+}
+
+page-register .background {
+  background: #0250c5 !important;
+}
+
+page-register .scroll-content {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
 }
 
-page-register div.wrap-register {
-  width: 500px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  padding-top: 70px;
-  padding-bottom: 70px;
+page-register ion-card.card {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
-page-register div.wrap-register img {
-  width: 100px;
-  height: 100px;
+page-register a, page-register p,
+page-register ion-card-header.card-header {
+  color: #fff !important;
+}
+
+page-register .list > .item-block:first-child {
+  border: medium none;
+}
+
+page-register .item {
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border: medium none;
+}
+
+page-register .item .text-input {
+  color: #fff;
+}
+
+page-register .item input::-moz-placeholder {
+  color: #fff !important;
+}
+
+page-register .item input:-moz-placeholder {
+  color: #fff !important;
+}
+
+page-register .item *:-moz-placeholder {
+  color: #fff !important;
+}
+
+page-register .item *:-ms-input-placeholder {
+  color: #fff !important;
+}
+
+page-register .item *::-webkit-input-placeholder {
+  color: #fff !important;
+}
+
+page-register .icon {
+  padding-right: 10px;
+}
+
+page-register .bottom {
+  bottom: 0;
+}
+
+page-register .input-cover {
+  position: static;
 }

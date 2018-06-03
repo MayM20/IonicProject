@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { usercreds } from '../../models/interfaces/usercreds';
+
+import { AuthProvider } from '../../providers/auth/auth';
+
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
+
+import * as firebase from 'firebase';
 /**
  * Generated class for the LoginPage page.
  *
@@ -16,29 +23,32 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  
-  username:string;
-  password:string;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  credentials = {} as usercreds;
+  /*username:string;
+  password:string;*/
+  constructor(public navCtrl: NavController, 
+              public authservice: AuthProvider,
+              public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login(){
-    console.log("Username: "+ this.username);
-
-    console.log("Password: "+ this.password);
+  signin() {
+    this.authservice.login(this.credentials).then((res: any) => {
+      if (!res.code)
+        this.navCtrl.setRoot('TabsPage');
+      else
+        alert(res);
+    })
   }
-
-  goRegister(){
-    this.navCtrl.push(RegisterPage);
+ 
+  passwordreset() {
   }
-
-  goTabsHome(){
-    this.navCtrl.setRoot(TabsPage);
+   
+  signup() {
+    this.navCtrl.push('RegisterPage');
   }
 
 }
