@@ -17,6 +17,7 @@ import * as firebase from 'firebase';
 export class MyApp {
   //in the rootpage you can set whats the first page
   rootPage:any = LoginPage;
+  //rootPage: string = 'tabs-page';
 
   constructor(platform: Platform, 
               statusBar: StatusBar, 

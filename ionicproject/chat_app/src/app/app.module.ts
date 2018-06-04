@@ -9,23 +9,29 @@ import { HttpModule } from '@angular/http';
 import * as firebase from 'firebase';
 import { config } from './app.firebaseconfig';
 import { AngularFireModule } from 'angularfire2';//new
+
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';//new
 //import { AngularFireDatabaseModule } from 'angularfire2/database';//new
 //import { AngularFireDatabase } from 'angularfire2/database';//new
 import { AuthProvider } from '../providers/auth/auth';//new
 import { UserProvider } from '../providers/user/user';
 
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
+
 //import { firebaseConfig } from '../config';//old 
 
-import { ProfilePage } from '../pages/profile/profile';
-import { ContactsPage } from '../pages/contacts/contacts';
-import { HomePage } from '../pages/home/home';
+//import { ProfilePage } from '../pages/profile/profile';
+//import { ContactsPage } from '../pages/contacts/contacts';
+//import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 //import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 
 
 
@@ -33,10 +39,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    ProfilePage,
-    ContactsPage,
-    HomePage,
-    //LoginPage,
+    //ProfilePage,
+    //ContactsPage,
+    //HomePage,
+    LoginPage,
     //RegisterPage,
     TabsPage
   ],
@@ -54,10 +60,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ProfilePage,
-    ContactsPage,
-    HomePage,
-    //LoginPage,
+    //ProfilePage,
+    //ContactsPage,
+    //HomePage,
+    LoginPage,
     //RegisterPage,
     TabsPage
   ],
@@ -69,7 +75,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     //AngularFireDatabase,
     //AngularFireDatabaseModule,
     AuthProvider,
-    UserProvider
+    File, //new but seems not be reading
+    FileChooser,//new. It is use to choose a file from the phonefile system
+    FilePath,//new
+    UserProvider,
+    ImghandlerProvider
   ]
 })
 export class AppModule {}

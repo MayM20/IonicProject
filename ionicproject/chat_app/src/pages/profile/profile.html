@@ -1,4 +1,4 @@
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
     <ion-title>
       About
@@ -8,4 +8,26 @@
 
 <ion-content padding>
 
-</ion-content>
+</ion-content>-->
+<ion-header>
+
+    <ion-navbar color="strong-pink">
+      <ion-title>Profile</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+<ion-content>
+<div class="profile-image" (click)="editimage()">
+    <img src="{{avatar}}">
+  </div>
+  <div>
+    <h2 (click)="editname()">{{displayName}}</h2>
+  </div>
+  <div>
+    Tap on your pic or nick name to change it.
+  </div>
+  <div class="spacer" style="height: 10px;"></div>
+  <div>
+    <button ion-button round outline color="danger" (click)="logout()">Logout</button>
+  </div>
+  </ion-content>
