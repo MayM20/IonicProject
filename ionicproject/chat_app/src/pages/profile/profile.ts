@@ -32,6 +32,45 @@ export class ProfilePage{
       })
     })
   }
+
+  editimage() {
+    //editing image not working because native plugings are being accesed in the browser
+    //In order to make plugins work, need to use a real device to test.
+
+    //To make the code testable in browser, use if-statement checking
+    //if Cordova is available
+
+    //if (this.platform.is('cordova')) {
+      // You're on a device, call the native plugins. Example: 
+      //
+      // var url: string = '';
+      // 
+      // Camera.getPicture().then((fileUri) => url = fileUri);
+    //} else {
+      // You're testing in browser, do nothing or mock the plugins' behaviour.
+      //
+      // var url: string = 'assets/mock-images/image.jpg';
+    //}
+    let statusalert = this.alertCtrl.create({
+      buttons: ['okay']
+    });
+    this.imghandler.uploadimage().then((url: any) => {
+      this.userservice.updateimage(url).then((res: any) => {
+        if (res.success) {
+          statusalert.setTitle('Updated');
+          statusalert.setSubTitle('Your profile pic has been changed successfully!!');
+          statusalert.present();
+          this.zone.run(() => {
+          this.avatar = url;
+        })  
+        }  
+      }).catch((err) => {
+          statusalert.setTitle('Failed');
+          statusalert.setSubTitle('Your profile pic was not changed');
+          statusalert.present();
+      })
+      })
+  }
   //update display name
   editname() {
     let statusalert = this.alertCtrl.create({

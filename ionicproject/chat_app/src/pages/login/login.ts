@@ -43,7 +43,7 @@ export class LoginPage {
         alert(res);
     })
   }
- 
+ //todo
   passwordreset() {
   }
    

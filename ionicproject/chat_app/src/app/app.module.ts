@@ -32,6 +32,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ImghandlerProvider } from '../providers/imghandler/imghandler';
+import { RequestsProvider } from '../providers/requests/requests';
 
 
 
@@ -79,7 +80,8 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
     FileChooser,//new. It is use to choose a file from the phonefile system
     FilePath,//new
     UserProvider,
-    ImghandlerProvider
+    ImghandlerProvider,
+    RequestsProvider
   ]
 })
 export class AppModule {}

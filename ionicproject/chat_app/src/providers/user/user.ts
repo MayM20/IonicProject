@@ -34,7 +34,7 @@ export class UserProvider {
           this.firedata.child(this.afireauth.auth.currentUser.uid).set({
             uid: this.afireauth.auth.currentUser.uid,
             displayName: newuser.displayName,
-            photoURL: 'assets/imgs/logo.png'
+            photoURL: 'assets/imgs/user-profile.png'
           }).then(() => {
             resolve({ success: true });
             }).catch((err) => {
@@ -104,6 +104,22 @@ updatedisplayname(newname) {
     }).catch((err) => {
       reject(err);
   })
+  })
+  return promise;
+}
+
+getallusers() {
+  var promise = new Promise((resolve, reject) => {
+    this.firedata.orderByChild('uid').once('value', (snapshot) => {
+      let userdata = snapshot.val();
+      let temparr = [];
+      for (var key in userdata) {
+        temparr.push(userdata[key]);
+      }
+      resolve(temparr);
+    }).catch((err) => {
+      reject(err);
+    })
   })
   return promise;
 }
