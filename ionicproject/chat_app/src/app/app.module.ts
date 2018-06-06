@@ -35,8 +35,6 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 import { RequestsProvider } from '../providers/requests/requests';
 
 
-
-
 @NgModule({
   declarations: [
     MyApp,
@@ -64,7 +62,7 @@ import { RequestsProvider } from '../providers/requests/requests';
     //ProfilePage,
     //ContactsPage,
     //HomePage,
-    LoginPage,
+   LoginPage,
     //RegisterPage,
     TabsPage
   ],

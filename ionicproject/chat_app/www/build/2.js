@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 710:
+/***/ 709:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(717);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(716);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var ProfilePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 717:
+/***/ 716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52,6 +52,8 @@ var ProfilePageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_user__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__ = __webpack_require__(88);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,13 +68,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ProfilePage = /** @class */ (function () {
-    function ProfilePage(navCtrl, navParams, userservice, zone, alertCtrl, imghandler) {
+    function ProfilePage(navCtrl, navParams, userservice, zone, alertCtrl, auth, imghandler) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.userservice = userservice;
         this.zone = zone;
         this.alertCtrl = alertCtrl;
+        this.auth = auth;
         this.imghandler = imghandler;
     }
     ProfilePage.prototype.ionViewWillEnter = function () {
@@ -170,18 +175,23 @@ var ProfilePage = /** @class */ (function () {
     ProfilePage.prototype.logout = function () {
         var _this = this;
         __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.auth().signOut().then(function () {
-            _this.navCtrl.parent.parent.setRoot('LoginPage');
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__login_login__["a" /* LoginPage */]);
         });
+    };
+    ProfilePage.prototype.signOut = function () {
+        this.auth.signOut();
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__login_login__["a" /* LoginPage */]);
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/profile/profile.html"*/'<!--<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>-->\n<ion-header>\n\n    <ion-navbar color="strong-pink">\n      <ion-title>Profile</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n<ion-content>\n<div class="profile-image" (click)="editimage()">\n    <img src="{{avatar}}">\n  </div>\n  <div>\n    <h2 (click)="editname()">{{displayName}}</h2>\n  </div>\n  <div>\n    Tap on your pic or nick name to change it.\n  </div>\n  <div class="spacer" style="height: 10px;"></div>\n  <div>\n    <button ion-button round outline color="danger" (click)="logout()">Logout</button>\n  </div>\n  </ion-content>\n'/*ion-inline-end:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/profile/profile.html"*/
+            selector: 'page-profile',template:/*ion-inline-start:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/profile/profile.html"*/'<!--<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>-->\n<ion-header>\n\n    <ion-navbar color="strong-pink">\n      <ion-title>Profile</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n<ion-content>\n<div class="profile-image" (click)="editimage()">\n    <img src="{{avatar}}">\n  </div>\n  <div>\n    <h2 (click)="editname()">{{displayName}}</h2>\n  </div>\n  <div>\n    Tap on your pic or nick name to change it.\n  </div>\n  <div class="spacer" style="height: 10px;"></div>\n  <div>\n    <button ion-button round outline color="danger" (click)="signOut()">Logout</button>\n  </div>\n  </ion-content>\n'/*ion-inline-end:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/profile/profile.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__["a" /* AuthProvider */],
             __WEBPACK_IMPORTED_MODULE_2__providers_imghandler_imghandler__["a" /* ImghandlerProvider */]])
     ], ProfilePage);
     return ProfilePage;

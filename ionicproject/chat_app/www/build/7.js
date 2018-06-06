@@ -24,18 +24,9 @@ var LoginPageModule = /** @class */ (function () {
     }
     LoginPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
-            ],
+            declarations: [],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
-            ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]
-                //how can i do the login johaness? because it says that i did not 
-                //declare the property. 
-                //How does actually module.ts works, how @IonicPage() works in modules
-                //entry components and so on
             ]
         })
     ], LoginPageModule);

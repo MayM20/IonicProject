@@ -48,7 +48,10 @@ export class LoginPage {
   }
    
   signup() {
+    //string = lazy loading 
     this.navCtrl.push('RegisterPage');
+    //varible = older, slow traditional way
+    //this.navCtrl.push(RegisterPage);
   }
 
 }

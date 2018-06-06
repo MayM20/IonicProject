@@ -37,11 +37,13 @@ login(credentials: usercreds) {
         resolve(true);
       }).catch((err) => {
         reject(err);
-       })
-    })
- 
+       });
+    });
     return promise;
-    
+  }
+
+  signOut(): Promise<void> {
+    return this.afireauth.auth.signOut();
   }
 
 }

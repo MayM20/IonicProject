@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 import { UserProvider } from '../../providers/user/user';
 import firebase from 'firebase';
+import { LoginPage } from '../login/login';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -18,6 +20,7 @@ export class ProfilePage{
               public userservice: UserProvider,
               public zone: NgZone,
               public alertCtrl: AlertController,
+              public auth: AuthProvider,
               public imghandler: ImghandlerProvider) {
 
   }
@@ -117,10 +120,16 @@ export class ProfilePage{
     });
     alert.present();
   }
+
   logout() {
     firebase.auth().signOut().then(() => {
-      this.navCtrl.parent.parent.setRoot('LoginPage');
+      this.navCtrl.setRoot(LoginPage);
     })
+  }
+
+  signOut(){
+    this.auth.signOut();
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
