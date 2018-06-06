@@ -5,9 +5,9 @@ import { usercreds } from '../../models/interfaces/usercreds';
 
 import { AuthProvider } from '../../providers/auth/auth';
 
-import { RegisterPage } from '../register/register';
-import { HomePage } from '../home/home';
-import { TabsPage } from '../tabs/tabs';
+//import { RegisterPage } from '../register/register';
+//import { HomePage } from '../home/home';
+//import { TabsPage } from '../tabs/tabs';
 
 import * as firebase from 'firebase';
 /**
@@ -38,7 +38,7 @@ export class LoginPage {
   signin() {
     this.authservice.login(this.credentials).then((res: any) => {
       if (!res.code)
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot('TabsPage');
       else
         alert(res);
     })

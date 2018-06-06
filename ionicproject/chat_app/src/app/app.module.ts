@@ -25,9 +25,9 @@ import { FilePath } from '@ionic-native/file-path';
 //import { ProfilePage } from '../pages/profile/profile';
 //import { ContactsPage } from '../pages/contacts/contacts';
 //import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
+//import { LoginPage } from '../pages/login/login';
 //import { RegisterPage } from '../pages/register/register';
-import { TabsPage } from '../pages/tabs/tabs';
+//import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,13 +37,7 @@ import { RequestsProvider } from '../providers/requests/requests';
 
 @NgModule({
   declarations: [
-    MyApp,
-    //ProfilePage,
-    //ContactsPage,
-    //HomePage,
-    LoginPage,
-    //RegisterPage,
-    TabsPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -58,13 +52,13 @@ import { RequestsProvider } from '../providers/requests/requests';
     ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    MyApp
     //ProfilePage,
     //ContactsPage,
     //HomePage,
-   LoginPage,
+    //LoginPage,
     //RegisterPage,
-    TabsPage
+    //TabsPage
   ],
   providers: [
     StatusBar,

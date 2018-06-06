@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 import { UserProvider } from '../../providers/user/user';
 import firebase from 'firebase';
-import { LoginPage } from '../login/login';
+//import { LoginPage } from '../login/login';
 import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
@@ -121,15 +121,15 @@ export class ProfilePage{
     alert.present();
   }
 
-  logout() {
+  /*logout() {
     firebase.auth().signOut().then(() => {
-      this.navCtrl.setRoot(LoginPage);
+      this.navCtrl.setRoot('LoginPage');
     })
-  }
+  }*/
 
   signOut(){
     this.auth.signOut();
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot('LoginPage');
   }
 
 }
