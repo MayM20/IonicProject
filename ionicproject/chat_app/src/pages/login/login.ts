@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import { usercreds } from '../../models/interfaces/usercreds';
-
 import { AuthProvider } from '../../providers/auth/auth';
-
-//import { RegisterPage } from '../register/register';
-//import { HomePage } from '../home/home';
-//import { TabsPage } from '../tabs/tabs';
 
 import * as firebase from 'firebase';
 /**

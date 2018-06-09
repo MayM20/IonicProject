@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 705:
+/***/ 704:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuddiesPageModule", function() { return BuddiesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buddies__ = __webpack_require__(713);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(712);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,40 +18,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BuddiesPageModule = /** @class */ (function () {
-    function BuddiesPageModule() {
+var HomePageModule = /** @class */ (function () {
+    function HomePageModule() {
     }
-    BuddiesPageModule = __decorate([
+    HomePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__buddies__["a" /* BuddiesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__buddies__["a" /* BuddiesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */])
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_2__buddies__["a" /* BuddiesPage */]
+                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]
             ]
         })
-    ], BuddiesPageModule);
-    return BuddiesPageModule;
+    ], HomePageModule);
+    return HomePageModule;
 }());
 
-//# sourceMappingURL=buddies.module.js.map
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
-/***/ 713:
+/***/ 712:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuddiesPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_requests_requests__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_requests_requests__ = __webpack_require__(356);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,87 +62,68 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-/**
- * Generated class for the BuddiesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-/*Display the list of users registered in the application. From there,
-the user can add people to his friends list*/
-var BuddiesPage = /** @class */ (function () {
-    function BuddiesPage(navCtrl, navParams, userservice, alertCtrl, requestservice) {
-        var _this = this;
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, navParams, requestservice, events, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.userservice = userservice;
-        this.alertCtrl = alertCtrl;
         this.requestservice = requestservice;
-        this.newrequest = {};
-        //getting all the users from the users collection 
-        //and returning an array
-        this.temparr = [];
-        this.filteredusers = [];
-        this.userservice.getallusers().then(function (res) {
-            _this.filteredusers = res;
-            _this.temparr = res;
-        });
+        this.events = events;
+        this.alertCtrl = alertCtrl;
     }
-    BuddiesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BuddiesPage');
-    };
-    BuddiesPage.prototype.searchuser = function (searchbar) {
-        this.filteredusers = this.temparr;
-        var q = searchbar.target.value;
-        if (q.trim() == '') {
-            return;
-        }
-        this.filteredusers = this.filteredusers.filter(function (v) {
-            if (v.displayName.toLowerCase().indexOf(q.toLowerCase()) > -1) {
-                return true;
-            }
-            return false;
+    HomePage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        this.requestservice.getmyrequests();
+        this.requestservice.getmyfriends();
+        this.myfriends = [];
+        this.events.subscribe('gotrequests', function () {
+            _this.myrequests = [];
+            _this.myrequests = _this.requestservice.userdetails;
+        });
+        //new
+        this.events.subscribe('friends', function () {
+            _this.myfriends = [];
+            _this.myfriends = _this.requestservice.myfriends;
         });
     };
-    BuddiesPage.prototype.sendreq = function (recipient) {
-        var _this = this;
-        this.newrequest.sender = __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.auth().currentUser.uid;
-        this.newrequest.recipient = recipient.uid;
-        if (this.newrequest.sender === this.newrequest.recipient)
-            alert('You are your friend always');
-        else {
-            var successalert_1 = this.alertCtrl.create({
-                title: 'Request sent',
-                subTitle: 'Your request was sent to ' + recipient.displayName,
-                buttons: ['ok']
-            });
-            this.requestservice.sendrequest(this.newrequest).then(function (res) {
-                if (res.success) {
-                    successalert_1.present();
-                    var sentuser = _this.filteredusers.indexOf(recipient);
-                    _this.filteredusers.splice(sentuser, 1);
-                }
-            }).catch(function (err) {
-                alert(err);
-            });
-        }
+    HomePage.prototype.ionViewDidLeave = function () {
+        this.events.unsubscribe('gotrequests');
+        this.events.unsubscribe('friends');
     };
-    BuddiesPage = __decorate([
+    HomePage.prototype.addbuddy = function () {
+        this.navCtrl.push('BuddiesPage');
+    };
+    HomePage.prototype.accept = function (item) {
+        var _this = this;
+        this.requestservice.acceptrequest(item).then(function () {
+            var newalert = _this.alertCtrl.create({
+                title: 'Friend added',
+                subTitle: 'Tap on the friend to chat with him',
+                buttons: ['Okay']
+            });
+            newalert.present();
+        });
+    };
+    HomePage.prototype.ignore = function (item) {
+        this.requestservice.deleterequest(item).then(function () {
+            alert('Request ignored');
+        }).catch(function (err) {
+            alert(err);
+        });
+    };
+    HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-buddies',template:/*ion-inline-start:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/buddies/buddies.html"*/'<!--\n  Generated template for the BuddiesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar color="strong-pink">\n      <ion-title>Add new user</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content>\n    <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>\n  <ion-list no-lines>\n    <ion-list>\n      <ion-item-sliding *ngFor="let key of filteredusers">\n        <ion-item >\n          <ion-avatar item-left>\n            <img src="{{key.photoURL}}">\n          </ion-avatar>\n          <h2>{{key.displayName}}</h2>\n        </ion-item>\n        <ion-item-options slide="left">\n          <button ion-button color="primary" (click)="sendreq(key)">\n            <ion-icon name="person-add"></ion-icon>\n            Add\n          </button>\n        </ion-item-options>\n        \n      </ion-item-sliding>\n    </ion-list>\n  </ion-list>\n  </ion-content>\n'/*ion-inline-end:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/buddies/buddies.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/home/home.html"*/'<!--ion-header>\n  <ion-navbar color="strong-pink" padding-right>\n    <button ion-button icon-only color="strong-pink">\n        <ion-icon name="md-person-add"></ion-icon>\n      </button>\n      <button ion-button icon-only color="strong-pink">\n          <ion-icon name="menu"></ion-icon>\n        </button>\n  </ion-navbar>\n</ion-header>-->\n<ion-header>\n\n    <ion-navbar color="strong-pink">\n      <ion-title>Home</ion-title>\n      <ion-buttons end>\n          <button ion-button icon-only (click)="addbuddy()">\n            <ion-icon name="person-add"></ion-icon>\n          </button>\n        </ion-buttons> \n    </ion-navbar>\n  \n  </ion-header>\n\n  <ion-content padding>\n      <ion-list no-lines>\n        <ion-list-header>\n          Requests\n        </ion-list-header>\n        <ion-item-sliding *ngFor="let item of myrequests">\n          <ion-item>\n          <ion-avatar item-left>\n            <img src="{{item.photoURL}}">\n          </ion-avatar>\n          <h4>{{item.displayName}}</h4>\n          </ion-item>\n          <ion-item-options>\n            <button ion-button color="secondary" (click)="accept(item)">\n              <ion-icon name="checkmark"></ion-icon>\n              ADD\n            </button>\n            <button ion-button color="danger" (click)="ignore(item)">\n              <ion-icon name="trash"></ion-icon>\n              DECLINE\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      <!--new added-->\n      <ion-list-header>\n      Friends\n  </ion-list-header>\n  <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)">\n    <ion-avatar item-left>\n      <img src={{item.photoURL}}>\n    </ion-avatar>\n    <h3>{{item.displayName}}</h3>\n  </ion-item>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_user_user__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_requests_requests__["a" /* RequestsProvider */]])
-    ], BuddiesPage);
-    return BuddiesPage;
+            __WEBPACK_IMPORTED_MODULE_2__providers_requests_requests__["a" /* RequestsProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], HomePage);
+    return HomePage;
 }());
 
-//# sourceMappingURL=buddies.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

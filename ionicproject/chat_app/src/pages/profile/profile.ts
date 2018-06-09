@@ -129,7 +129,7 @@ export class ProfilePage{
 
   signOut(){
     this.auth.signOut();
-    this.navCtrl.setRoot('LoginPage');
+    this.navCtrl.parent.parent.setRoot('LoginPage');
   }
 
 }
