@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events, AlertController } from 'ionic-angular';
 import { RequestsProvider } from '../../providers/requests/requests';
+import { ChatProvider } from '../../providers/chat/chat';
 
 @IonicPage()
 @Component({
@@ -13,6 +14,7 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public requestservice: RequestsProvider,
+              public chatservice: ChatProvider,
               public events: Events,
               public alertCtrl: AlertController) {
 
@@ -26,7 +28,7 @@ export class HomePage {
       this.myrequests = [];
       this.myrequests = this.requestservice.userdetails;
     })
-    //new
+    
     this.events.subscribe('friends', () => {
       this.myfriends = [];
       this.myfriends = this.requestservice.myfriends; 
@@ -58,6 +60,10 @@ export class HomePage {
     }).catch((err) => {
       alert(err);
     })
+  }
+  buddychat(buddy) {
+    this.chatservice.initializebuddy(buddy);
+    this.navCtrl.push('BuddychatPage');
   }
 
 }
