@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:800");
+@import url("https://fonts.googleapis.com/css?family=Shrikhand");
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -28040,45 +28041,15 @@ page-buddychat .chatwindow {
   padding-bottom: 70px;
 }
 
-page-login {
-  /*ion-title {
-        margin-bottom: 20vh;
-        font-family: 'Raleway-Black', sans-serif;
-        font-size: 30px;
-    }
-
-    ion-content{
-        background: #0250c5 !important;
-   
-    }
-
-    ion-input{
-        background: #e6e6e6;
-        border-radius: 5px;
-    }
-
-    div.container{
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    div.wrap-login{
-        width: 500px;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-    div.wrap-login img{
-        width: 100px;
-        height: 100px;
-    }*/
+page-login #main-title {
+  font-size: 50px;
+  font-family: "Shrikhand", cursive;
 }
 
 page-login .background {
-  background: #0250c5 !important;
+  background-image: url("../assets/imgs/cover-png.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 page-login .scroll-content {
@@ -28217,47 +28188,15 @@ page-profilepic .scroll-content {
   text-align: center;
 }
 
-page-register {
-  /*OLD code
-
-    ion-content{
-        background: #0250c5 !important;
-   
-    }
-
-    ion-input{
-        background: #e6e6e6;
-        border-radius: 5px;
-    }
-
-    div.container{
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    div.wrap-register{
-        width: 500px;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    div.wrap-register img{
-        width: 100px;
-        height: 100px;
-    }
-    //angulafire2 to connect firebase to ionic 
-    //one for authtentication, one for data 
-    //read data can import the data service, any authentication can be done by that 
-    //get data as objects better
-    */
+page-register #main-title {
+  font-size: 50px;
+  font-family: "Shrikhand", cursive;
 }
 
 page-register .background {
-  background: #0250c5 !important;
+  background-image: url("../assets/imgs/cover-png.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 page-register .scroll-content {

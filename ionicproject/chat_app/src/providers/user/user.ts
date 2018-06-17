@@ -17,11 +17,15 @@ export class UserProvider {
   }
 
    /*
-  Adds a new user to the system.
-  Called from - signup.ts
-  Inputs - The new user object containing the email, password and displayName.
-  Outputs - Promise.
+
+  'adduser' method does: 
   
+  1-Add a new user to the system with createUserwithEmailAndPassword()
+  2-Called from signup.ts
+  3- The inputs are: new user object containing the email, password and displayName.
+  4-Once the user is created, 'updateProfile' method is used to add the displayName for the user.
+  5-User information is stored into chatusers collection.
+ 
    */
   
   adduser(newuser) {
@@ -30,11 +34,13 @@ export class UserProvider {
         this.afireauth.auth.currentUser.updateProfile({
           displayName: newuser.displayName,
           photoURL: 'assets/imgs/user-profile.png'
+          //displayCountry: newuser.displayCountry
         }).then(() => {
           this.firedata.child(this.afireauth.auth.currentUser.uid).set({
             uid: this.afireauth.auth.currentUser.uid,
             displayName: newuser.displayName,
             photoURL: 'assets/imgs/user-profile.png'
+            //displayCountry: newuser.displayCountry
           }).then(() => {
             resolve({ success: true });
             }).catch((err) => {
@@ -51,7 +57,7 @@ export class UserProvider {
   }
 
   /* 
-  For updating the users collection and the firebase users list with
+ This works to update the users collection and the firebase users list with
   the imageurl of the profile picture stored in firebase storage.
   Called from - profilepic.ts 
   */
@@ -86,6 +92,7 @@ getuserdetails() {
   })
   return promise;
 }
+//update the user profile based on uid
 updatedisplayname(newname) {
   var promise = new Promise((resolve, reject) => {
     this.afireauth.auth.currentUser.updateProfile({

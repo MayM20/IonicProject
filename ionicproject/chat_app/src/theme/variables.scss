@@ -4,6 +4,7 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
+$font-title: 'Shrikhand', cursive;
 
 
 // The app direction is used to include
@@ -40,11 +41,12 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   strong-pink: #d33f8d
+ // #e8817f
 );
 
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:800');
-
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
 
 // App iOS Variables
 // --------------------------------------------------

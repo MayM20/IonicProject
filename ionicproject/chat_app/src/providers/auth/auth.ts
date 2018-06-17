@@ -16,21 +16,13 @@ export class AuthProvider {
   public data: any;
   public fireAuth: any;
   public userProfile: any;
-
-  /*old
-  constructor(public http: HttpClient) {
-    console.log('Hello AuthProvider Provider');
-  }*/
+  
 constructor(public afireauth: AngularFireAuth) {
     this.fireAuth = firebase.auth();
     this.userProfile = firebase.database().ref('users');
   }
  
-/*
-    For logging in a particular user. Called from the login.ts file.
-  
-*/  
-  
+//to login specific user, called from the login.ts  
 login(credentials: usercreds) {
     var promise = new Promise((resolve, reject) => {
       this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {

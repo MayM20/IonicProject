@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 import { UserProvider } from '../../providers/user/user';
 import firebase from 'firebase';
-//import { LoginPage } from '../login/login';
 import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
@@ -11,6 +10,7 @@ import { AuthProvider } from '../../providers/auth/auth';
   selector: 'page-profile',
   templateUrl: 'profile.html'
 })
+
 export class ProfilePage{
   avatar: string;
   displayName: string;
@@ -27,6 +27,7 @@ export class ProfilePage{
   ionViewWillEnter(){
     this.loaduserdetails();//whenever the user enters this tab, load user details
   }
+
   loaduserdetails() {
     this.userservice.getuserdetails().then((res: any) => {
       this.displayName = res.displayName;
@@ -74,7 +75,7 @@ export class ProfilePage{
       })
       })
   }
-  //update display name
+//alert with input field and buttons, handler method updates the user profile based on uid
   editname() {
     let statusalert = this.alertCtrl.create({
       buttons: ['okay']
@@ -120,12 +121,6 @@ export class ProfilePage{
     });
     alert.present();
   }
-
-  /*logout() {
-    firebase.auth().signOut().then(() => {
-      this.navCtrl.setRoot('LoginPage');
-    })
-  }*/
 
   signOut(){
     this.auth.signOut();

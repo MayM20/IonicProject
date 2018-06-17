@@ -18,8 +18,7 @@ import * as firebase from 'firebase';
 })
 export class LoginPage {
   credentials = {} as usercreds;
-  /*username:string;
-  password:string;*/
+
   constructor(public navCtrl: NavController, 
               public authservice: AuthProvider,
               public navParams: NavParams) {
@@ -28,7 +27,7 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
+//calling login function present in the auth provider and passing on the entered email and password to it
   signin() {
     this.authservice.login(this.credentials).then((res: any) => {
       if (!res.code)
@@ -37,15 +36,9 @@ export class LoginPage {
         alert(res);
     })
   }
- //todo
-  passwordreset() {
-  }
    
   signup() {
-    //string = lazy loading 
     this.navCtrl.push('RegisterPage');
-    //varible = older, slow traditional way
-    //this.navCtrl.push(RegisterPage);
   }
 
 }

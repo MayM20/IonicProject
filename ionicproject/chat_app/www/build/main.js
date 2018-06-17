@@ -1,4 +1,4 @@
-webpackJsonp([9],{
+webpackJsonp([10],{
 
 /***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -34,11 +34,15 @@ var UserProvider = /** @class */ (function () {
         this.firedata = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/chatusers');
     }
     /*
-   Adds a new user to the system.
-   Called from - signup.ts
-   Inputs - The new user object containing the email, password and displayName.
-   Outputs - Promise.
+ 
+   'adduser' method does:
    
+   1-Add a new user to the system with createUserwithEmailAndPassword()
+   2-Called from signup.ts
+   3- The inputs are: new user object containing the email, password and displayName.
+   4-Once the user is created, 'updateProfile' method is used to add the displayName for the user.
+   5-User information is stored into chatusers collection.
+  
     */
     UserProvider.prototype.adduser = function (newuser) {
         var _this = this;
@@ -47,11 +51,13 @@ var UserProvider = /** @class */ (function () {
                 _this.afireauth.auth.currentUser.updateProfile({
                     displayName: newuser.displayName,
                     photoURL: 'assets/imgs/user-profile.png'
+                    //displayCountry: newuser.displayCountry
                 }).then(function () {
                     _this.firedata.child(_this.afireauth.auth.currentUser.uid).set({
                         uid: _this.afireauth.auth.currentUser.uid,
                         displayName: newuser.displayName,
                         photoURL: 'assets/imgs/user-profile.png'
+                        //displayCountry: newuser.displayCountry
                     }).then(function () {
                         resolve({ success: true });
                     }).catch(function (err) {
@@ -67,7 +73,7 @@ var UserProvider = /** @class */ (function () {
         return promise;
     };
     /*
-    For updating the users collection and the firebase users list with
+   This works to update the users collection and the firebase users list with
     the imageurl of the profile picture stored in firebase storage.
     Called from - profilepic.ts
     */
@@ -104,6 +110,7 @@ var UserProvider = /** @class */ (function () {
         });
         return promise;
     };
+    //update the user profile based on uid
     UserProvider.prototype.updatedisplayname = function (newname) {
         var _this = this;
         var promise = new Promise(function (resolve, reject) {
@@ -144,9 +151,10 @@ var UserProvider = /** @class */ (function () {
     };
     UserProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object])
     ], UserProvider);
     return UserProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=user.js.map
@@ -182,19 +190,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   and Angular DI.
 */
 var AuthProvider = /** @class */ (function () {
-    /*old
-    constructor(public http: HttpClient) {
-      console.log('Hello AuthProvider Provider');
-    }*/
     function AuthProvider(afireauth) {
         this.afireauth = afireauth;
         this.fireAuth = __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]();
         this.userProfile = __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref('users');
     }
-    /*
-        For logging in a particular user. Called from the login.ts file.
-      
-    */
+    //to login specific user, called from the login.ts  
     AuthProvider.prototype.login = function (credentials) {
         var _this = this;
         var promise = new Promise(function (resolve, reject) {
@@ -211,9 +212,10 @@ var AuthProvider = /** @class */ (function () {
     };
     AuthProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object])
     ], AuthProvider);
     return AuthProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=auth.js.map
@@ -243,22 +245,26 @@ webpackEmptyAsyncContext.id = 169;
 var map = {
 	"../pages/buddies/buddies.module": [
 		704,
-		8
+		9
 	],
 	"../pages/buddychat/buddychat.module": [
 		705,
-		7
+		8
 	],
 	"../pages/contacts/contacts.module": [
 		706,
+		7
+	],
+	"../pages/cover/cover.module": [
+		707,
 		6
 	],
 	"../pages/home/home.module": [
-		708,
+		709,
 		5
 	],
 	"../pages/login/login.module": [
-		707,
+		708,
 		4
 	],
 	"../pages/profile/profile.module": [
@@ -266,15 +272,15 @@ var map = {
 		3
 	],
 	"../pages/profilepic/profilepic.module": [
-		709,
+		711,
 		2
 	],
 	"../pages/register/register.module": [
-		711,
+		712,
 		1
 	],
 	"../pages/tabs/tabs.module": [
-		712,
+		713,
 		0
 	]
 };
@@ -723,10 +729,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/buddies/buddies.module#BuddiesPageModule', name: 'BuddiesPage', segment: 'buddies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buddychat/buddychat.module#BuddychatPageModule', name: 'BuddychatPage', segment: 'buddychat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cover/cover.module#CoverPageModule', name: 'CoverPage', segment: 'cover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profilepic/profilepic.module#ProfilepicPageModule', name: 'ProfilepicPage', segment: 'profilepic', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profilepic/profilepic.module#ProfilepicPageModule', name: 'ProfilepicPage', segment: 'profilepic', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
@@ -815,19 +822,7 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return config; });
-// Initialize Firebase
-/*OLD
-export const firebaseConfig = {
-    fire: {
-    apiKey: "AIzaSyB5_deSKeVkoNFDYOZqoejlbjlW1ZW88os",
-    authDomain: "chatappia.firebaseapp.com",
-    databaseURL: "https://chatappia.firebaseio.com",
-    projectId: "chatappia",
-    storageBucket: "chatappia.appspot.com",
-    messagingSenderId: "77277216723"
-    }
-  };
- // firebase.initializeApp(config);*/
+// Initialize Firebase with values from my Firebase Console
 var config = {
     apiKey: "AIzaSyB5_deSKeVkoNFDYOZqoejlbjlW1ZW88os",
     authDomain: "chatappia.firebaseapp.com",
