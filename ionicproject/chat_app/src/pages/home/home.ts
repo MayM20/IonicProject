@@ -39,8 +39,8 @@ export class HomePage {
     this.events.unsubscribe('gotrequests');
     this.events.unsubscribe('friends');
   }
-  addbuddy() {
-    this.navCtrl.push('BuddiesPage');
+  addfriend() {
+    this.navCtrl.push('friendsPage');
   }
   accept(item) {
     this.requestservice.acceptrequest(item).then(() => {
@@ -61,9 +61,9 @@ export class HomePage {
       alert(err);
     })
   }
-  buddychat(buddy) {
+  friendchat(buddy) {
     this.chatservice.initializebuddy(buddy);
-    this.navCtrl.push('BuddychatPage');
+    this.navCtrl.push('friendchatPage');
   }
 
 }

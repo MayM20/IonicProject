@@ -27985,11 +27985,11 @@ ion-navbar.toolbar {
   text-align: center;
 }
 
-page-buddychat .chat {
+page-friendchat .chat {
   width: 320px;
 }
 
-page-buddychat .bubble {
+page-friendchat .bubble {
   background-color: #F2F2F2;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 6px #B2B2B2;
@@ -28000,7 +28000,7 @@ page-buddychat .bubble {
   vertical-align: top;
 }
 
-page-buddychat .bubble::before {
+page-friendchat .bubble::before {
   background-color: #F2F2F2;
   content: "\00a0";
   display: block;
@@ -28015,34 +28015,34 @@ page-buddychat .bubble::before {
   width: 20px;
 }
 
-page-buddychat .me {
+page-friendchat .me {
   float: left;
   margin: 5px 45px 5px 20px;
 }
 
-page-buddychat .me::before {
+page-friendchat .me::before {
   -webkit-box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
   box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
   left: -9px;
 }
 
-page-buddychat .you {
+page-friendchat .you {
   float: right;
   margin: 5px 20px 5px 45px;
 }
 
-page-buddychat .you::before {
+page-friendchat .you::before {
   -webkit-box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
   box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
   right: -9px;
 }
 
-page-buddychat .chatwindow {
+page-friendchat .chatwindow {
   padding-bottom: 70px;
 }
 
 page-login #main-title {
-  font-size: 50px;
+  font-size: 30px;
   font-family: "Shrikhand", cursive;
 }
 
@@ -28189,7 +28189,7 @@ page-profilepic .scroll-content {
 }
 
 page-register #main-title {
-  font-size: 50px;
+  font-size: 30px;
   font-family: "Shrikhand", cursive;
 }
 

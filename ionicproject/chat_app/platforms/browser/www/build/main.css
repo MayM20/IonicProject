@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:800");
+@import url("https://fonts.googleapis.com/css?family=Shrikhand");
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -27984,11 +27985,11 @@ ion-navbar.toolbar {
   text-align: center;
 }
 
-page-buddychat .chat {
+page-friendchat .chat {
   width: 320px;
 }
 
-page-buddychat .bubble {
+page-friendchat .bubble {
   background-color: #F2F2F2;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 6px #B2B2B2;
@@ -27999,7 +28000,7 @@ page-buddychat .bubble {
   vertical-align: top;
 }
 
-page-buddychat .bubble::before {
+page-friendchat .bubble::before {
   background-color: #F2F2F2;
   content: "\00a0";
   display: block;
@@ -28014,71 +28015,41 @@ page-buddychat .bubble::before {
   width: 20px;
 }
 
-page-buddychat .me {
+page-friendchat .me {
   float: left;
   margin: 5px 45px 5px 20px;
 }
 
-page-buddychat .me::before {
+page-friendchat .me::before {
   -webkit-box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
   box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
   left: -9px;
 }
 
-page-buddychat .you {
+page-friendchat .you {
   float: right;
   margin: 5px 20px 5px 45px;
 }
 
-page-buddychat .you::before {
+page-friendchat .you::before {
   -webkit-box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
   box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
   right: -9px;
 }
 
-page-buddychat .chatwindow {
+page-friendchat .chatwindow {
   padding-bottom: 70px;
 }
 
-page-login {
-  /*ion-title {
-        margin-bottom: 20vh;
-        font-family: 'Raleway-Black', sans-serif;
-        font-size: 30px;
-    }
-
-    ion-content{
-        background: #0250c5 !important;
-   
-    }
-
-    ion-input{
-        background: #e6e6e6;
-        border-radius: 5px;
-    }
-
-    div.container{
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    div.wrap-login{
-        width: 500px;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-    div.wrap-login img{
-        width: 100px;
-        height: 100px;
-    }*/
+page-login #main-title {
+  font-size: 50px;
+  font-family: "Shrikhand", cursive;
 }
 
 page-login .background {
-  background: #0250c5 !important;
+  background-image: url("../assets/imgs/cover-png.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 page-login .scroll-content {
@@ -28217,47 +28188,15 @@ page-profilepic .scroll-content {
   text-align: center;
 }
 
-page-register {
-  /*OLD code
-
-    ion-content{
-        background: #0250c5 !important;
-   
-    }
-
-    ion-input{
-        background: #e6e6e6;
-        border-radius: 5px;
-    }
-
-    div.container{
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    div.wrap-register{
-        width: 500px;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    div.wrap-register img{
-        width: 100px;
-        height: 100px;
-    }
-    //angulafire2 to connect firebase to ionic 
-    //one for authtentication, one for data 
-    //read data can import the data service, any authentication can be done by that 
-    //get data as objects better
-    */
+page-register #main-title {
+  font-size: 50px;
+  font-family: "Shrikhand", cursive;
 }
 
 page-register .background {
-  background: #0250c5 !important;
+  background-image: url("../assets/imgs/cover-png.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 page-register .scroll-content {

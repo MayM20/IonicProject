@@ -15,10 +15,12 @@ import firebase from 'firebase';
 export class ImghandlerProvider {
   nativepath: any; 
   firestore = firebase.storage();
-  constructor(public filechooser: FileChooser) {
+  constructor(public filechooser: FileChooser,
+              public file: File,
+              public filepath: FilePath) {
   }
   /*
-  For uploading an image to firebase storage.
+  'uploadimage' does:
   
   Called from - profilepic.ts
   Inputs - none.

@@ -1,5 +1,8 @@
 //import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 import firebase from 'firebase';
 import { Events } from 'ionic-angular';
 
@@ -11,7 +14,7 @@ import { Events } from 'ionic-angular';
 */
 @Injectable()
 export class ChatProvider {
-  firebuddychats = firebase.database().ref('/buddychats');
+  firefriendchats = firebase.database().ref('/friendchats');
   buddy: any;
   buddymessages = [];
   constructor(public events: Events) {
@@ -24,12 +27,12 @@ export class ChatProvider {
   addnewmessage(msg) {
     if (this.buddy) {
       var promise = new Promise((resolve, reject) => {
-        this.firebuddychats.child(firebase.auth().currentUser.uid).child(this.buddy.uid).push({
+        this.firefriendchats.child(firebase.auth().currentUser.uid).child(this.buddy.uid).push({
           sentby: firebase.auth().currentUser.uid,
           message: msg,
           timestamp: firebase.database.ServerValue.TIMESTAMP
         }).then(() => {
-          this.firebuddychats.child(this.buddy.uid).child(firebase.auth().currentUser.uid).push().set(
+          this.firefriendchats.child(this.buddy.uid).child(firebase.auth().currentUser.uid).push().set(
             { sentby: firebase.auth().currentUser.uid,
               message: msg,
               timestamp: firebase.database.ServerValue.TIMESTAMP }
@@ -44,10 +47,10 @@ export class ChatProvider {
     }
   }
 
-  getbuddymessages() {
+  getfriendmessages() {
     
     let temp;
-    this.firebuddychats.child(firebase.auth().currentUser.uid).child(this.buddy.uid).on('value', (snapshot) => {
+    this.firefriendchats.child(firebase.auth().currentUser.uid).child(this.buddy.uid).on('value', (snapshot) => {
       this.buddymessages = [];
       temp = snapshot.val();
       for (var tempkey in temp) {

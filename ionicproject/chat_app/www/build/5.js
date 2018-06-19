@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 709:
+/***/ 706:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(714);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,15 +42,15 @@ var HomePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 719:
+/***/ 714:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_requests_requests__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_chat_chat__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_requests_requests__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_chat_chat__ = __webpack_require__(358);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,8 +91,8 @@ var HomePage = /** @class */ (function () {
         this.events.unsubscribe('gotrequests');
         this.events.unsubscribe('friends');
     };
-    HomePage.prototype.addbuddy = function () {
-        this.navCtrl.push('BuddiesPage');
+    HomePage.prototype.addfriend = function () {
+        this.navCtrl.push('friendsPage');
     };
     HomePage.prototype.accept = function (item) {
         var _this = this;
@@ -112,13 +112,13 @@ var HomePage = /** @class */ (function () {
             alert(err);
         });
     };
-    HomePage.prototype.buddychat = function (buddy) {
+    HomePage.prototype.friendchat = function (buddy) {
         this.chatservice.initializebuddy(buddy);
-        this.navCtrl.push('BuddychatPage');
+        this.navCtrl.push('friendchatPage');
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/home/home.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n      <ion-title>Home</ion-title>\n      <ion-buttons end>\n          <button ion-button icon-only (click)="addbuddy()">\n            <ion-icon name="person-add"></ion-icon>\n          </button>\n        </ion-buttons> \n    </ion-navbar>\n  \n  </ion-header>\n\n  <ion-content padding>\n      <ion-list no-lines>\n        <ion-list-header>\n          Requests\n        </ion-list-header>\n        <ion-item-sliding *ngFor="let item of myrequests">\n          <ion-item>\n          <ion-avatar item-left>\n            <img src="{{item.photoURL}}">\n          </ion-avatar>\n          <h4>{{item.displayName}}</h4>\n          </ion-item>\n          <ion-item-options>\n            <button ion-button color="secondary" (click)="accept(item)">\n              <ion-icon name="checkmark"></ion-icon>\n              ADD\n            </button>\n            <button ion-button color="danger" (click)="ignore(item)">\n              <ion-icon name="trash"></ion-icon>\n              DECLINE\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      <!--new added-->\n      <ion-list-header>\n      Friends\n  </ion-list-header>\n  <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)">\n    <ion-avatar item-left>\n      <img src={{item.photoURL}}>\n    </ion-avatar>\n    <h3>{{item.displayName}}</h3>\n  </ion-item>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/home/home.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n      <ion-title>Home</ion-title>\n      <ion-buttons end>\n          <button ion-button icon-only (click)="addfriend()">\n            <ion-icon name="person-add"></ion-icon>\n          </button>\n        </ion-buttons> \n    </ion-navbar>\n  \n  </ion-header>\n\n  <ion-content padding>\n      <ion-list no-lines>\n        <ion-list-header>\n          Requests\n        </ion-list-header>\n        <ion-item-sliding *ngFor="let item of myrequests">\n          <ion-item>\n          <ion-avatar item-left>\n            <img src="{{item.photoURL}}">\n          </ion-avatar>\n          <h4>{{item.displayName}}</h4>\n          </ion-item>\n          <ion-item-options>\n            <button ion-button color="secondary" (click)="accept(item)">\n              <ion-icon name="checkmark"></ion-icon>\n              ADD\n            </button>\n            <button ion-button color="danger" (click)="ignore(item)">\n              <ion-icon name="trash"></ion-icon>\n              DECLINE\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      <!--new added-->\n      <ion-list-header>\n      Friends\n  </ion-list-header>\n  <ion-item *ngFor="let item of myfriends" (click)="friendchat(item)">\n    <ion-avatar item-left>\n      <img src={{item.photoURL}}>\n    </ion-avatar>\n    <h3>{{item.displayName}}</h3>\n  </ion-item>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/Fatima/Desktop/ChatApp/ionicproject/chat_app/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],

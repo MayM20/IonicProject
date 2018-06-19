@@ -44,7 +44,7 @@ Sign up function does:
       duration: 3000,
       position: 'bottom'
     });
-    if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '' || this.newuser.displayCountry == '') {
+    if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '') {
       toaster.setMessage('Please fill all the required fields');
       toaster.present();
     }

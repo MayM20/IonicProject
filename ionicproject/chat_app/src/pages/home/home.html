@@ -1,9 +1,10 @@
 <ion-header>
 
     <ion-navbar color="primary">
+
       <ion-title>Home</ion-title>
       <ion-buttons end>
-          <button ion-button icon-only (click)="addbuddy()">
+          <button ion-button icon-only (click)="addfriend()">
             <ion-icon name="person-add"></ion-icon>
           </button>
         </ion-buttons> 
@@ -38,7 +39,7 @@
       <ion-list-header>
       Friends
   </ion-list-header>
-  <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)">
+  <ion-item *ngFor="let item of myfriends" (click)="friendchat(item)">
     <ion-avatar item-left>
       <img src={{item.photoURL}}>
     </ion-avatar>

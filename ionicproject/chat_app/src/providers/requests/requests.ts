@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Events } from 'ionic-angular';
 import { connreq } from '../../models/interfaces/request';
 import { UserProvider } from '../user/user';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 import firebase from 'firebase';
 import { PICKER_OPT_SELECTED } from 'ionic-angular/components/picker/picker-options';
 

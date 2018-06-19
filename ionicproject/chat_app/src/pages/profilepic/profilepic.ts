@@ -17,7 +17,7 @@ import { UserProvider } from '../../providers/user/user';
   templateUrl: 'profilepic.html',
 })
 export class ProfilepicPage {
-  imgurl = '';
+  imgurl = 'https://firebasestorage.googleapis.com/v0/b/chatappia.appspot.com/o/user-profile.png?alt=media&token=0b1b13cb-8f89-4905-9b57-029a349d53f6';
   moveon = true; 
 
   constructor(public navCtrl: NavController, 
@@ -29,9 +29,14 @@ export class ProfilepicPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilepicPage');
   }
-
+/*
+Choosing profile picture steps:
+1-Choose a picture from the file system using cordova-file-chooser plugin.
+2-Resolve native path of that file using cordova-filepath plugin
+3-Store it as a blob in firebase-storage
+4-Then, the download url of the stored file will be got to show the image on the app
+ */
   chooseimage() {
     let loader = this.loadingCtrl.create({
       content: 'Please wait'
