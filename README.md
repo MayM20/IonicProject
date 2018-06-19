@@ -24,7 +24,7 @@ A step by step series of examples that tell you have to get a development env ru
 sudo npm install ionic -g 
 ```
 
-## Running application in iOS device
+## Running application in iOS platform
 
 1)Download the project in a new folder. 
 
@@ -39,23 +39,7 @@ sudo npm install ionic -g
 6)Use terminal to run the application by typing
 
 ```
-ionic cordova run iOS
-```
-
-## Running application in iOS simulator
-
-1)Download the project in a new folder. 
-
-2)Access the project directory by using the commandprompt/terminal.
-
-3)Once in the project folder, access the folder called 'ionicproject'.
-
-4)Then access access the sub-folder called 'chat_app' to run it.
-
-5)Use terminal to run the application by typing
-
-```
-ionic cordova emulate ios
+ionic cordova run iOS/ ionic cordova emulate iOS
 ```
 
 ## Built With
