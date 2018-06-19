@@ -250,19 +250,19 @@ var map = {
 		6
 	],
 	"../pages/home/home.module": [
-		707,
+		706,
 		5
 	],
 	"../pages/login/login.module": [
-		706,
+		707,
 		4
 	],
 	"../pages/profile/profile.module": [
-		708,
+		711,
 		3
 	],
 	"../pages/profilepic/profilepic.module": [
-		710,
+		708,
 		2
 	],
 	"../pages/register/register.module": [
@@ -270,7 +270,7 @@ var map = {
 		1
 	],
 	"../pages/tabs/tabs.module": [
-		711,
+		710,
 		0
 	]
 };
@@ -730,12 +730,12 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/friendchat/friendchat.module#friendchatPageModule', name: 'friendchatPage', segment: 'friendchat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/friends/friends.module#friendsPageModule', name: 'friendsPage', segment: 'friends', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profilepic/profilepic.module#ProfilepicPageModule', name: 'ProfilepicPage', segment: 'profilepic', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
