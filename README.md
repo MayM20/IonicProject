@@ -67,7 +67,7 @@ ionic cordova emulate ios
 
 ## Demonstration Chat Application
 
-* [Chat Application]<img src= "http://g.recordit.co/Cp4HpaIzNT.gif">
+* <img src= "http://g.recordit.co/Cp4HpaIzNT.gif">
 
 ## Author
 
