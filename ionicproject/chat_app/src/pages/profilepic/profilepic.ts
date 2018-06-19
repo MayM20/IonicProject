@@ -50,6 +50,7 @@ Choosing profile picture steps:
       })
     })
   }
+  
  
   updateproceed() {
     let loader = this.loadingCtrl.create({

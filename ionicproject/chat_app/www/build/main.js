@@ -250,11 +250,11 @@ var map = {
 		6
 	],
 	"../pages/home/home.module": [
-		706,
+		707,
 		5
 	],
 	"../pages/login/login.module": [
-		707,
+		706,
 		4
 	],
 	"../pages/profile/profile.module": [
@@ -698,8 +698,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
- //with this plugin we can choose a file from the phone's filesystem
- //with this plugin we resolve the native path of the file, this is then fed into a reader
+ //-> with this plugin we can choose a file from the phone's filesystem
+ //-> with this plugin we resolve the native path of the file, this is then fed into a reader
 //when the reader is finished being read, a blob is created
 //the blob is going to be saved in the storage of firebase
 //after being successfully stored, the download url of that file is got using
@@ -730,8 +730,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/friendchat/friendchat.module#friendchatPageModule', name: 'friendchatPage', segment: 'friendchat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/friends/friends.module#friendsPageModule', name: 'friendsPage', segment: 'friends', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profilepic/profilepic.module#ProfilepicPageModule', name: 'ProfilepicPage', segment: 'profilepic', priority: 'low', defaultHistory: [] },

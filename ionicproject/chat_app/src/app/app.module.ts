@@ -15,8 +15,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { UserProvider } from '../providers/user/user';
 
 import { File } from '@ionic-native/file';
-import { FileChooser } from '@ionic-native/file-chooser';//with this plugin we can choose a file from the phone's filesystem
-import { FilePath } from '@ionic-native/file-path';//with this plugin we resolve the native path of the file, this is then fed into a reader
+import { FileChooser } from '@ionic-native/file-chooser';//-> with this plugin we can choose a file from the phone's filesystem
+import { FilePath } from '@ionic-native/file-path';//-> with this plugin we resolve the native path of the file, this is then fed into a reader
                                                   //when the reader is finished being read, a blob is created
                                                   //the blob is going to be saved in the storage of firebase
                                                   //after being successfully stored, the download url of that file is got using
@@ -54,7 +54,7 @@ import { ChatProvider } from '../providers/chat/chat';
     AuthProvider,
     File, //new but seems not be reading
     FileChooser,//new. It is use to choose a file from the phonefile system
-    FilePath,//new
+    FilePath,
     UserProvider,
     ImghandlerProvider,
     RequestsProvider,

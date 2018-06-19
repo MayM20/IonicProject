@@ -14,12 +14,19 @@
     <div class="profile-image">
       <img src="{{imgurl}}">
     </div>
+    <!--new-->
     <div>
-      <button ion-button round outline (click)="chooseimage()"></button>
+        <h2>{{displayName}}</h2>
+      </div>
+
+    <div>
+      <button ion-button round outline>Choose an image</button>
     </div>
+
     <div [hidden]="!moveon">
       <button ion-button round outline (click)="proceed()">Skip this step</button>
     </div>
+    
     <div [hidden]="moveon">
       <button ion-button round outline (click)="updateproceed()">Upload & proceed</button>
     </div>
