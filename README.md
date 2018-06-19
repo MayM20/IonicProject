@@ -16,18 +16,13 @@ What things you need to install the software and how to install them. To run the
 
 A step by step series of examples that tell you have to get a development env running
 
-3)Once in the project folder, install ionic
+3)Once in the project folder, access the folder called 'ionicproject'.
+
+4)Then access access the sub-folder called 'chat_app' to install ionic.
 
 ```
 sudo npm install ionic -g 
 ```
-
-4)In the project folder, run the project using
-
-```
-ionic serve
-```
-
 
 ## Running application in iOS device
 
@@ -72,7 +67,7 @@ ionic cordova emulate ios
 
 ## Demonstration Chat Application
 
-* [To List Application](https://youtu.be/KZQKB7-bPhY)
+* [Chat Application]<img src= "http://g.recordit.co/Cp4HpaIzNT.gif">
 
 ## Author
 
