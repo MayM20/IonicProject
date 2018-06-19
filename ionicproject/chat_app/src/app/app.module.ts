@@ -21,7 +21,7 @@ import { FilePath } from '@ionic-native/file-path';//-> with this plugin we reso
                                                   //the blob is going to be saved in the storage of firebase
                                                   //after being successfully stored, the download url of that file is got using
                                                   //getDownloadURL() and then sent to the calling statement in the profilepic.ts 
-import { StatusBar } from '@ionic-native/status-bar';
+import { StatusBar} from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 import { RequestsProvider } from '../providers/requests/requests';
