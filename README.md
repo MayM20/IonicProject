@@ -6,19 +6,20 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them. To run the application in a BROWSER you need to:
+To run the application you need to:
 
-1)Download the project.
+-Have previously installed Node.js. 
 
-2)Access the project directory by using the commandprompt/terminal.
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+1)Download the project or clone this repository.
+
+2)Access the project directory by using the commandprompt/terminal.
 
 3)Once in the project folder, access the folder called 'ionicproject'.
 
-4)Then access access the sub-folder called 'chat_app' to install ionic.
+4)Then access access the sub-folder called 'chat_app' to install ionic globally.
 
 ```
 sudo npm install ionic -g 
@@ -40,6 +41,22 @@ sudo npm install ionic -g
 
 ```
 ionic cordova run iOS/ ionic cordova emulate iOS
+```
+
+## Running application in desktop
+
+1)Download the project in a new folder. 
+
+2)Access the project directory by using the commandprompt/terminal.
+
+3)Once in the project folder, access the folder called 'ionicproject'.
+
+4)Then access access the sub-folder called 'chat_app' to run it.
+
+5)Use terminal to run the application by typing
+
+```
+ionic serve
 ```
 
 ## Built With
